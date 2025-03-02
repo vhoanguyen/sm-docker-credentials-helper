@@ -6,6 +6,7 @@ on:
   pull_request:
     branches:
       - master
+  workflow_dispatch:
 env:
     VERSION: ${{ github.run_number }}
 jobs:
