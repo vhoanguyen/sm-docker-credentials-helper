@@ -58,59 +58,6 @@ func (mr *MockSecretsManagerGetSecretAPIMockRecorder) GetSecretValue(ctx, params
 }
 
 
-
-// func TestSecretManager_Get(t *testing.T) {
-// 	ctrl := gomock.NewController(t)
-// 	defer ctrl.Finish()
-
-// 	mockAPI := NewMockSecretsManagerGetSecretAPI(ctrl)
-// 	ctx := context.TODO()
-
-// 	secretManager := SecretManagerObject{
-// 		SecretName: "test-secret",
-// 		Cxt:        ctx,
-// 		SecretClientAPI:        mockAPI,
-// 		Logger:    nil,
-// 	}
-
-// 	secretValue := `{"https://index.docker.io/v1/": {"username": "testuser", "password": "testpass"}}`
-// 	mockAPI.EXPECT().GetSecretValue(ctx, &secretsmanager.GetSecretValueInput{
-// 		SecretId: aws.String("test-secret"),
-// 	}).Return(&secretsmanager.GetSecretValueOutput{
-// 		SecretString: aws.String(secretValue),
-// 	}, nil)
-
-// 	username, password, err := secretManager.Get("https://index.docker.io/v1/")
-// 	assert.NoError(t, err)
-// 	assert.Equal(t, "testuser", username)
-// 	assert.Equal(t, "testpass", password)
-// }
-
-// func TestSecretManager_Get_InvalidCredentialsFormat(t *testing.T) {
-// 	ctrl := gomock.NewController(t)
-// 	defer ctrl.Finish()
-
-// 	mockAPI := NewMockSecretsManagerGetSecretAPI(ctrl)
-// 	ctx := context.TODO()
-
-// 	secretManager := SecretManager{
-// 		secretName: "test-secret",
-// 		ctx:        ctx,
-// 		api:        mockAPI,
-// 	}
-
-// 	secretValue := `{"https://example.com": "invalid_credentials"}`
-// 	mockAPI.EXPECT().GetSecretValue(ctx, &secretsmanager.GetSecretValueInput{
-// 		SecretId: aws.String("test-secret"),
-// 	}).Return(&secretsmanager.GetSecretValueOutput{
-// 		SecretString: aws.String(secretValue),
-// 	}, nil)
-
-// 	username, password, err := secretManager.Get("https://example.com")
-// 	assert.Error(t, err)
-// 	assert.Equal(t, "", username)
-// 	assert.Equal(t, "", password)
-// }
 func TestSecretManagerObject_getSecret(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
