@@ -46,7 +46,7 @@ cp ./bin/sm-login-linux-amd64 /usr/local/bin/docker-credential-sm-login
 {
   "credsStore": "ecr-login",
   "credHelpers": {
-    "https://index.docker.io/v1/": "sb-login"
+    "https://index.docker.io/v1/": "sm-login"
   }
 }
 
