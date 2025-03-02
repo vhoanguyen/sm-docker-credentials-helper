@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MySecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      Name: MySecret
+      Description: "A sample secret for demonstration purposes"
+      SecretString: |
+        {
+          "https://index.docker.io/v1/":
+            {
+              "username": "username",
+              "password": "TOKEN"
+            }
+        }
+      Tags:
+        - Key: Environment
+          Value: Production
+      ResourcePolicy:
+        Version: "2012-10-17"
+
