@@ -15,6 +15,16 @@ You also need to create a secret in AWS Secrets Manager that contains the Docker
     {
         "username": "username",
         "password": "TOKEN"
+    },
+  "ghcr.io":
+    {
+      "username": "username",
+      "password": "TOKEN"
+    },
+    "registry.gitlab.com":
+    {
+      "username": "username",
+      "password": "TOKEN"
     }
 }
 ```
@@ -46,7 +56,9 @@ cp ./bin/sm-login-linux-amd64 /usr/local/bin/docker-credential-sm-login
 {
   "credsStore": "ecr-login",
   "credHelpers": {
-    "https://index.docker.io/v1/": "sm-login"
+    "https://index.docker.io/v1/": "sm-login",
+    "registry.gitlab.com": "sm-login",
+    "ghcr.io": "sm-login"
   }
 }
 
