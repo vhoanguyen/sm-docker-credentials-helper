@@ -21,7 +21,7 @@ You also need to create a secret in AWS Secrets Manager that contains the Docker
       "username": "username",
       "password": "TOKEN"
     },
-    "registry.gitlab.com":
+  "registry.gitlab.com":
     {
       "username": "username",
       "password": "TOKEN"
