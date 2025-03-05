@@ -76,7 +76,7 @@ func (self SecretManagerObject) Get(serverURL string) (string, string, error) {
 	data, ok := secret[serverURL]
 	if !ok {
 		self.Logger.Errorf("secret not found for serverURL: %s", serverURL)
-		return "", "", nil
+		return "", "", fmt.Errorf("secret not found for serverURL: %s", serverURL)
 	}
 	return data.Username, data.Password, nil
 }

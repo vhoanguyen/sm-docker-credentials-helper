@@ -170,7 +170,7 @@ func TestSecretManagerObject_Get(t *testing.T) {
 		}, nil)
 
 		username, password, err := secretManager.Get(serverURL)
-		assert.NoError(t, err)
+		assert.Error(t, err)
 		assert.Equal(t, "", username)
 		assert.Equal(t, "", password)
 	})
